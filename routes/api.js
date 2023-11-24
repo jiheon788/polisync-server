@@ -3,8 +3,6 @@ const router = express.Router();
 const OpenAI = require("openai");
 const config = require("../config");
 
-require("dotenv").config();
-
 const openai = new OpenAI({
   apiKey: config.openaiApiKey,
   organization: config.openaiOrganizationId,

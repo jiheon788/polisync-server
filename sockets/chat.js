@@ -1,4 +1,3 @@
-// sockets/chat.js
 module.exports = function setupChat(io) {
   io.on("connection", (socket) => {
     console.log("A user connected");

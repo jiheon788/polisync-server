@@ -12,13 +12,18 @@ router.post("/openai", async (req, res) => {
   const { prompt } = req.body;
 
   try {
-    const response = await openai.createCompletion({
-      model: "text-davinci-002",
-      prompt: prompt,
-      max_tokens: 150,
+    const response = await openai.chat.completions.create({
+      model: "gpt-3.5-turbo",
+      messages: [{ role: "user", content: prompt }],
     });
 
-    res.json(response.data);
+    const responseData = {
+      id: response.id,
+      model: response.model,
+      response: response.choices[0].message,
+    };
+
+    res.json(responseData);
   } catch (error) {
     console.error(error);
     res.status(500).send("An error occurred while processing your request.");

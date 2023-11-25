@@ -1,6 +1,6 @@
 # PoliSync - server
 
-> This is a simple WebSocket server for building the MVP of Poli Sync.
+> A WebSocket & Proxy server for PoliSync's MVP.
 
 ## Getting Started
 
